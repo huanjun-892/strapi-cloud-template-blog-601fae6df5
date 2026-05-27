@@ -27,11 +27,18 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "difficulty": {
       "type": "enumeration",
-      "enum": ["easy", "simple", "medium", "hard"],
+      "enum": [
+        "easy",
+        "simple",
+        "medium",
+        "hard"
+      ],
       "required": true,
       "default": "easy"
     },
@@ -90,8 +97,7 @@
     "relatedRecipes": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::recipe.recipe",
-      "inversedBy": "relatedRecipes"
+      "target": "api::recipe.recipe"
     },
     "relatedKnowledge": {
       "type": "relation",

@@ -22,7 +22,13 @@
     },
     "category": {
       "type": "enumeration",
-      "enum": ["technique", "ingredient", "flavor", "culture", "history"],
+      "enum": [
+        "technique",
+        "ingredient",
+        "flavor",
+        "culture",
+        "history"
+      ],
       "required": true
     },
     "content": {
@@ -33,7 +39,9 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "relatedRecipes": {
       "type": "relation",
@@ -44,8 +52,7 @@
     "relatedKnowledge": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::knowledge.knowledge",
-      "inversedBy": "relatedKnowledge"
+      "target": "api::knowledge.knowledge"
     }
   }
 }

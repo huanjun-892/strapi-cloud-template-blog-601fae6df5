@@ -22,7 +22,17 @@
     },
     "category": {
       "type": "enumeration",
-      "enum": ["pork", "beef", "chicken", "seafood", "tofu", "egg", "vegetable", "staple", "soup"],
+      "enum": [
+        "pork",
+        "beef",
+        "chicken",
+        "seafood",
+        "tofu",
+        "egg",
+        "vegetable",
+        "staple",
+        "soup"
+      ],
       "required": true
     },
     "description": {
@@ -32,7 +42,9 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "caloriesPer100g": {
       "type": "integer"
@@ -58,20 +70,17 @@
     "pairings": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::ingredient-item.ingredient-item",
-      "inversedBy": "pairings"
+      "target": "api::ingredient-item.ingredient-item"
     },
     "avoidances": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::ingredient-item.ingredient-item",
-      "inversedBy": "avoidances"
+      "target": "api::ingredient-item.ingredient-item"
     },
     "substitutes": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::ingredient-item.ingredient-item",
-      "inversedBy": "substitutes"
+      "target": "api::ingredient-item.ingredient-item"
     }
   }
 }
