@@ -1,5 +1,35 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface RecipeIngredient extends Struct.ComponentSchema {
+  collectionName: 'components_recipe_ingredients';
+  info: {
+    displayName: '用料';
+    icon: 'bulletList';
+    description: '食谱用料清单';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    amount: Schema.Attribute.String & Schema.Attribute.Required;
+    isMain: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    substitute: Schema.Attribute.String;
+  };
+}
+
+export interface RecipeStep extends Struct.ComponentSchema {
+  collectionName: 'components_recipe_steps';
+  info: {
+    displayName: '步骤';
+    icon: 'numberList';
+    description: '食谱制作步骤';
+  };
+  attributes: {
+    stepNumber: Schema.Attribute.Integer & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    tip: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -65,6 +95,8 @@ export interface SharedMedia extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'recipe.ingredient': RecipeIngredient;
+      'recipe.step': RecipeStep;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
