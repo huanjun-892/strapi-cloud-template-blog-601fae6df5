@@ -60,6 +60,12 @@
     },
     "fiberPer100g": {
       "type": "float"
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::region.region",
+      "mappedBy": "specialIngredients"
     }
   }
 }

@@ -22,6 +22,12 @@
     },
     "icon": {
       "type": "string"
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "tags"
     }
   }
 }

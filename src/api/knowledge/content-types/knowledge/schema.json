@@ -42,6 +42,17 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "relatedRecipes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "relatedKnowledge"
+    },
+    "relatedKnowledge": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::knowledge.knowledge"
     }
   }
 }

@@ -70,6 +70,41 @@
       "repeatable": true,
       "component": "recipe.step"
     },
+    "cuisine": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cuisine.cuisine",
+      "inversedBy": "recipes"
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::region.region",
+      "inversedBy": "recipes"
+    },
+    "methods": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::method.method",
+      "inversedBy": "recipes"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "recipes"
+    },
+    "relatedRecipes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::recipe.recipe"
+    },
+    "relatedKnowledge": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::knowledge.knowledge",
+      "inversedBy": "relatedRecipes"
+    },
     "history": {
       "type": "richtext"
     }

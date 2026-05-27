@@ -30,6 +30,24 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::region.region",
+      "inversedBy": "cuisines"
+    },
+    "methods": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::method.method",
+      "inversedBy": "cuisines"
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "cuisine"
     }
   }
 }
