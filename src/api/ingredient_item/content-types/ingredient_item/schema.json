@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ingredient_items",
+  "info": {
+    "singularName": "ingredient-item",
+    "pluralName": "ingredient-items",
+    "displayName": "食材库",
+    "description": "食材详细信息和营养数据"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["pork", "beef", "chicken", "seafood", "tofu", "egg", "vegetable", "staple", "soup"],
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "caloriesPer100g": {
+      "type": "integer"
+    },
+    "proteinPer100g": {
+      "type": "float"
+    },
+    "carbsPer100g": {
+      "type": "float"
+    },
+    "fatPer100g": {
+      "type": "float"
+    },
+    "fiberPer100g": {
+      "type": "float"
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::region.region",
+      "mappedBy": "specialIngredients"
+    },
+    "pairings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ingredient-item.ingredient-item",
+      "inversedBy": "pairings"
+    },
+    "avoidances": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ingredient-item.ingredient-item",
+      "inversedBy": "avoidances"
+    },
+    "substitutes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ingredient-item.ingredient-item",
+      "inversedBy": "substitutes"
+    }
+  }
+}
