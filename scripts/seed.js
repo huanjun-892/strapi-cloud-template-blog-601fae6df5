@@ -268,7 +268,7 @@ async function main() {
   process.exit(0);
 }
 
-
-module.exports = async () => {
-  await seedExampleApp();
-};
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
