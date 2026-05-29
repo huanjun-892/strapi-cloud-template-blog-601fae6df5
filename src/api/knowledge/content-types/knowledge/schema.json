@@ -27,7 +27,8 @@
         "ingredient",
         "flavor",
         "culture",
-        "history"
+        "history",
+        "secret"
       ],
       "required": true
     },
